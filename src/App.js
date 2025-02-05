@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import { Menu } from 'antd';
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Menu, Table, Button } from 'antd';
+import {  useNavigate } from "react-router-dom";
 import { HomeOutlined } from "@ant-design/icons";
 
 function App() {
@@ -56,20 +56,42 @@ function SideMenu() {
 }
 
 function Content() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch("http://127.0.0.1:8000/paricipants/");
+      if (!response.ok) throw new Error('Erreur de chargement des données');
+      const result = await response.json();
+      setData(result);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const columns = [
+    { title: 'ID', dataIndex: 'id', key: 'id' },
+    { title: 'Nom complet', dataIndex: 'full_name', key: 'full_name' },
+    { title: 'Email', dataIndex: 'email', key: 'email' },
+    { title: 'Contact', dataIndex: 'contact', key: 'contact' },
+    { title: 'Adresse', dataIndex: 'address', key: 'address' },
+  ];
+
   return (
-    <div style={{ display: "flex", flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Routes>
-        <Route path="/"></Route>
-      </Routes>
-      <div style={{
-        textAlign: "center",
-        padding: 20,
-        background: "lightyellow",
-        border: "1px solid lightgray"
+    <div style={{
+    margin: '80px auto', }}>
+      {/* Section Hello World et Bouton */}
+      <div style={{ textAlign: "center", background: "lightyellow", padding: 20, border: "1px solid lightgray" ,
+      display: "flex", flexDirection: "column",justifyContent: "center",
+      alignItems: "center", 
+      height: "20vh",
       }}>
-         <p>Hello World</p>
-         
-        <button 
+        <p>Hello World</p>
+        <button
           onClick={() => window.location.href = 'https://bount-dev.com'}
           style={{
             padding: "10px 20px",
@@ -86,6 +108,25 @@ function Content() {
         >
           Visiter Bount Dev
         </button>
+      </div>
+
+      {/* Tableau des participants */}
+      <div style={{ marginTop: 40 }}>
+        <h2 style={{ textAlign: "center" }}>Liste des participants</h2>
+        <Button
+          type="primary"
+          onClick={fetchData}
+          loading={loading}
+          style={{ marginBottom: 20 }}
+        >
+          Charger les participants
+        </Button>
+        <Table
+          dataSource={data}
+          columns={columns}
+          rowKey="id"
+          bordered
+        />
       </div>
     </div>
   );
