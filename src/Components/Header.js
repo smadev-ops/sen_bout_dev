@@ -2,12 +2,15 @@ import React from 'react';
 
 function Header() {
   return (
-    <div style={{
-      height: 60, background: "lightskyblue",
-      color: "white", display: 'flex',
+    <div className="header" style={{
+      height: "10vh", 
+      background: "lightskyblue",
+      color: "white", 
+      display: 'flex',
       justifyContent: "center",
       alignItems: "center",
-      fontWeight: "bold"
+      fontWeight: "bold",
+      fontSize: "2rem"
     }}>
       Header
     </div>

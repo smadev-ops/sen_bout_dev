@@ -2,12 +2,15 @@ import React from 'react';
 
 function Footer() {
   return (
-    <div style={{
-      height: 60, background: "lightgray",
-      color: "white", display: 'flex',
+    <div className="footer" style={{
+      height: "8vh", 
+      background: "lightgray",
+      color: "white", 
+      display: 'flex',
       justifyContent: "center",
       alignItems: "center",
-      fontWeight: "bold"
+      fontWeight: "bold",
+      fontSize: "1rem"
     }}>
       Footer
     </div>

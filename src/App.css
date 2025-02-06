@@ -69,3 +69,12 @@ body {
     width: 100%; /* Boutons plus larges sur mobile */
   }
 }
+
+@media (max-width: 768px) {
+  .header, .footer {
+    height: auto;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
