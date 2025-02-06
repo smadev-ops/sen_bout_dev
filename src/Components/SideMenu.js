@@ -13,7 +13,7 @@ function SideMenu() {
       items={[
         { label: "Accueil", key: "/", icon: <HomeOutlined /> },
       ]}
-    />
+      />
   );
 }
 

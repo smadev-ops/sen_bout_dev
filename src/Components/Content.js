@@ -31,7 +31,7 @@ function Content() {
     <div style={{ margin: '80px auto' }}>
       {/* Section Hello World et Bouton */}
       <div style={{
-        textAlign: "center", background: "lightyellow", padding: 20,
+        textAlign: "center", background: "lightyellow", padding: 10,
         border: "1px solid lightgray", display: "flex",
         flexDirection: "column", justifyContent: "center",
         alignItems: "center", height: "20vh"
@@ -40,14 +40,14 @@ function Content() {
         <button
           onClick={() => window.location.href = 'https://bount-dev.com'}
           style={{
-            padding: "10px 20px",
+            padding: "10px",
             backgroundColor: "#007bff",
             color: "white",
             border: "none",
             borderRadius: "5px",
             cursor: "pointer",
             fontSize: "14px",
-            marginTop: "10px",
+            marginTop: "1px",
           }}
           onMouseOver={(e) => e.target.style.backgroundColor = '#0056b3'}
           onMouseOut={(e) => e.target.style.backgroundColor = '#007bff'}

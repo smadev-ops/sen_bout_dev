@@ -1,3 +1,4 @@
+// App.js
 import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -6,14 +7,16 @@ import Content from './Components/Content';
 
 function App() {
   return (
-    <div style={{ display: 1, flexDirection: "column", flex: 1, height: '100vh' }}>
+    <div className='container'>
+    <div className="main-content" style={{ display: "flex", flexDirection: "column", flex: 1, height: '10vh' }}>
       <Header />
-      <div className="main-content" style={{ display: "flex", flexDirection: "row", flex: 1 }}>
+      <div className="main-content" style={{ display: "flex", flexDirection: "row" }}>
         <SideMenu />
         <Content />
       </div>
       <Footer />
     </div>
+  </div>
   );
 }
 
