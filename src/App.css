@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+/* Style par défaut pour les grands écrans */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Layout pour les écrans larges */
+@media (min-width: 768px) {
+  .main-content {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* Style pour les petits écrans */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .ant-table {
+    overflow-x: auto;
+  }
+
+  button {
+    width: 100%; /* Boutons plus larges sur mobile */
+  }
+}
