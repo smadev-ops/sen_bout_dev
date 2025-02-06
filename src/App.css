@@ -14,9 +14,9 @@ body {
   .main-content {
     width: 600px;
   }
-@media screen (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .container {
-    width: 650px;
+    width: 600px;
   }
 }
 
@@ -29,7 +29,7 @@ body {
   }
 }
 
-@media screen (max-width: 900px) {
+@media screen and (max-width: 900px){
   .header, .footer {
     height: auto;
     padding: 10px;
