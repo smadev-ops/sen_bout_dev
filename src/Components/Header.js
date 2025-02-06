@@ -10,7 +10,8 @@ function Header() {
       justifyContent: "center",
       alignItems: "center",
       fontWeight: "bold",
-      fontSize: "2rem"
+      fontSize: "2rem",
+      
     }}>
       Header
     </div>
