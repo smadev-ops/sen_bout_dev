@@ -12,7 +12,7 @@ body {
 /* Style pour les petits écrans */
 @media screen and (max-width: 900px) {
   .main-content {
-    width: 100%;
+    width: 600px;
   }
 @media screen (max-width: 900px) {
   .container {
@@ -35,7 +35,7 @@ body {
     padding: 10px;
     font-size: 1rem;
     text-align: center;
-    width: 100%;
+    width: 600px;
     box-sizing: border-box;
   }
 }
