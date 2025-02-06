@@ -16,7 +16,7 @@ body {
   }
 @media screen (max-width: 900px) {
   .container {
-    width: 110px;
+    width: 650px;
   }
 }
 
