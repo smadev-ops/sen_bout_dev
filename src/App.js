@@ -62,7 +62,7 @@ function Content() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:8000/paricipants/");
+      const response = await fetch("https://donnees-back-bount-dev.onrender.com/paricipants/");
       if (!response.ok) throw new Error('Erreur de chargement des données');
       const result = await response.json();
       setData(result);
